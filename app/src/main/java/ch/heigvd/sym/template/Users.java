@@ -6,7 +6,7 @@ class Users {
 
     private static HashMap<String, String> users;
 
-    {
+    static {
         users = new HashMap<String, String>();
 
         users.put("toto@tutu.com", "tata");

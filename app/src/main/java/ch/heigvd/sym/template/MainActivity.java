@@ -39,11 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
     // For logging purposes
     private static final String TAG = MainActivity.class.getSimpleName();
+    
 	private static final HashMap<String,String> usersList = Users.getUsers();
-
-    // Just for test purposes : please destroy !
-	private static final String validEmail      = "toto@tutu.com";
-	private static final String validPassword   = "tata";
 
     // GUI elements
 	private EditText email      = null;
@@ -89,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
 				Toast.makeText(MainActivity.this, getResources().getString(R.string.good), Toast.LENGTH_LONG).show();
 				finish();
 			} else {
-
 				if(!mail.contains("@") && !mail.isEmpty()) {
 					Toast.makeText(MainActivity.this, getResources().getString(R.string.missAt), Toast.LENGTH_LONG).show();
 				}
@@ -107,10 +103,15 @@ public class MainActivity extends AppCompatActivity {
 				return false;
         }
 
-			// Return true if combination valid, false otherwise
-			return (mail.equals(validEmail) && passwd.equals(validPassword));
+		// Return true if combination valid, false otherwise
+		for( HashMap.Entry<String, String> user : usersList.entrySet() ){
 
-
+			Log.w(TAG, "im hehre");
+			if (mail.equals(user.getKey()) && passwd.equals(user.getValue())){
+				return true;
+			}
+		}
+		return false;
 
 	}
 
