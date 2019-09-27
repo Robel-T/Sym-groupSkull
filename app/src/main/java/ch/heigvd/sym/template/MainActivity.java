@@ -33,10 +33,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     // For logging purposes
     private static final String TAG = MainActivity.class.getSimpleName();
+	private static final HashMap<String,String> usersList = Users.getUsers();
 
     // Just for test purposes : please destroy !
 	private static final String validEmail      = "toto@tutu.com";
