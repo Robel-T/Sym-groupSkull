@@ -1,9 +1,16 @@
 package ch.heigvd.sym.template;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.telephony.TelephonyManager;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
 
 
 public class DisplayMsg extends GenericActivity {
@@ -28,12 +35,25 @@ public class DisplayMsg extends GenericActivity {
         TextView textView = findViewById(R.id.email);
         textView.setText(mail);
 
+
+        // permet d'afficher l imei du telephone
         TelephonyManager tm = (TelephonyManager)getSystemService((TELEPHONY_SERVICE));
         String imei = "IMEI - " + tm.getImei();
 
         TextView timei = findViewById(R.id.imei);
         timei.setText(imei);
 
+        // permet d afficher la photo qui se trouve dans la carte sd
+        ImageView iv = findViewById(R.id.img);
+        File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        String fileString = file.toString() + "/simpson.png";
+        iv.setImageURI(Uri.parse(fileString));
+
+        // quitter
+        Button btn = findViewById(R.id.btn);
+        btn.setOnClickListener((v) -> {
+                finish();
+        });
 
     }
 
