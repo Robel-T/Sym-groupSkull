@@ -22,7 +22,7 @@ Source : https://developer.android.com/studio/write/vector-asset-studio.html#run
 
 ### Question 3 : 
 
-Quand on presse le bouton Back, l'application n'est plus visible, donc `onStop()` est appelé. Cette méthode n'est pas implémentée dans notre application, donc quand on la rouvre, il faut se re-loguer à nouveau.
+Quand on presse le bouton Back, l'application n'est plus visible, donc `onStop()` est appelé. Cette méthode n'est pas implémentée dans notre application, donc quand on la rouvre, il faut se re-loguer à nouveau car l'Activity de départ est relancée.
 
 Il faudrait que l'état du login soit sauvegardé dans un état créé dans la méthode `onStart()`.
 
@@ -49,7 +49,7 @@ Source : https://stackoverflow.com/questions/46744104/tm-getdeviceid-is-deprecat
 
 ### Question 7 : TODO
 
-### Question 8 : Pas fini
+### Question 8 : Pas fini (faire le code)
 
 ### Brève explication des méthodes :
 
