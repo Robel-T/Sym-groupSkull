@@ -18,20 +18,59 @@ Dans un premier temps, on télécharge l'icône souhaité en format `.svg`. On p
 
 On peut ensuite l'inclure dans notre code.
 
-https://developer.android.com/studio/write/vector-asset-studio.html#running ("Importing an SVD or PSD file")
+Source : https://developer.android.com/studio/write/vector-asset-studio.html#running ("Importing an SVD or PSD file")
 
-### Question 3 :
+### Question 3 : TODO
 
-### Question 4 :
+### Question 4 : TODO
 
 ### Question 5 :
 
-https://stackoverflow.com/questions/46744104/tm-getdeviceid-is-deprecated#46744134
+On peut tester la version du SDK utilisé et exécuter une fonction différente selon sa valeur, comme suit :
 
-### Question 6 :
+``` Java
 
-### Question 7 :
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String imei = telephonyMgr.getImei();
+} else {
+            String imei = telephonyMgr.getDeviceId();
+}
+```
 
-(voir code)
+Source : https://stackoverflow.com/questions/46744104/tm-getdeviceid-is-deprecated#46744134
 
-### Question 8 :
+### Question 6 : TODO
+
+### Question 7 : TODO
+
+### Question 8 : Pas fini
+
+### Brève explication des méthodes :
+
+`onCreate()` : sert à initialiser notre Activity
+
+`onStart()` : sert à rendre visible l'Activity
+
+`onStop()` : sert à masquer l'Activity (par exemple une autre vient devant celle-ci)
+
+`onRestart()` : sert à redémarrer l'Activity (`onStart()` est appelé juste après)
+
+`onPause()` : sert à suspendre les interactions avec l'Activity
+
+`onResume()` : sert à démarrer les interactions de l'Activity avec l'utilisateur
+
+`onDestroy()` : sert à finir l'Activity (l'éteindre)
+
+### Enchaînement :
+
+Lancement de l'Activity : on appelle dans l'ordre `onCreate()`, `onStart()` et `onResume()`. L'Activity devient en cours d'exécution.
+
+Une autre Activity vient au premier plan : `onPause()` est appelé. 
+
+Si l'utilisateur y retourne, `onResume()` est appelé, qui remet l'Activity en cours d'exécution.
+
+Sinon, `onStop()` est appelé. Si l'utilisateur y retourne, `onRestart()` est appelé, qui appelle `onStart()`.
+
+Si l'Activity est finie ou détruite par le système, c'est `onDestroy()` qui est appelé.
+
+Source : https://developer.android.com/reference/android/app/Activity#activity-lifecycle
