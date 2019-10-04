@@ -28,7 +28,11 @@ Il faudrait que l'état du login soit sauvegardé dans un état créé dans la m
 
 Dans notre application, nous avons tout implémenté dans des méthodes `onCreate()`. Ce n'est pas une bonne méthode du tout, il faudrait essayer d'implémenter chaque fonction définie dans la question 8 (voir ci-dessous).
 
-### Question 4 : TODO
+### Question 4 : 
+
+Pour le laboratoire, nous avons transmis l’email entrée dans l’Activity de départ à la seconde, et pour ce faire nous avons créé une variable static qui peut être accessible dans d’autres Activity. La variable reçoit la valeur que l’utilisateur entre pour se connecter (l’email). Puis nous créeons une Intent pour nous permettre de mettre la variable dedans avec la méthode putExtra.
+
+Pour renvoyer du second à celui de départ, il faut mettre en place un TextView et un bouton. Le bouton permettra d’executé l’action et ensuite il faut créer une intent, d y insérer le résultat via la méthode putExtra. Dans l’Activity de départ, il faudra mettre en place un TextView invisible qui s’activera dès qu il recoit une réponse du seconde Activity.
 
 ### Question 5 :
 
@@ -47,22 +51,25 @@ Source : https://stackoverflow.com/questions/46744104/tm-getdeviceid-is-deprecat
 
 ### Question 6 :
 
-On rajoute un layout specifique à l'orientation paysage via le bouton de gestion des layouts dans l'IDE:
+On rajoute un layout spécifique à l'orientation paysage via le bouton de gestion des layouts dans l'IDE:
 
 Preview -> orientation for preview (O) -> Create Landscape Variation
 
-Android studio va créer ainsi toute les composantes du nouveau layout en se basant de la version originelle en portrait, qu'on peut donc modifier afin de créer une page plus plaisante et adapté à la vision en paysage.
+Android studio va créer ainsi toutes les composantes du nouveau layout en se basant de la version originelle en portrait, qu'on peut donc modifier afin de créer une page plus plaisante et adaptée à la vision en paysage.
 
 ### Question 7 :
 
-Avec l'onglet de gestion des layouts, on effectue une conversion de Linearlayout -> RelativeLayout. Enfin, afin de reyouter les notions d'ordre vertical qui maitenant son plus gerés par le layout parent, on indique via la commande
+Avec l'onglet de gestion des layouts, on effectue une conversion de Linearlayout -> RelativeLayout. Enfin, afin de rajouter les notions d'ordre vertical qui maitenant ne sont plus gerées par le layout parent, on indique via la commande
 ```
 android:layout_below="@+id/XXXXXXX"
 ```
+les différents niveaux de hiérarchie des différents éléments.
 
-les differents niveaux de hierarchie des differents elements.
+### Question 8 :
 
-### Question 8 : Pas fini (faire le code)
+Nous avons implémenté les méthodes ci-dessous dans notre application en overridant simplement les méthodes de base, afin de tracer le parcours de l'application via des logs. En observant le résultat lorsqu'on utilise l'application, nous pouvons nous rendre compte que cela concorde bien avec le diagramme établi au 3e point de cette question.
+
+Pour ne pas implémenter 2 fois les mêmes méthodes, nous pouvons réaliser une classe mère qui les implémenterait avec un comportement général à adopter pour l'Activiy. Ainsi, il faudrait simplement que les Activity souhaitées héritent de cette classe.
 
 ### Brève explication des méthodes :
 
@@ -93,3 +100,4 @@ Sinon, `onStop()` est appelé. Si l'utilisateur y retourne, `onRestart()` est ap
 Si l'Activity est finie ou détruite par le système, c'est `onDestroy()` qui est appelé.
 
 Source : https://developer.android.com/reference/android/app/Activity#activity-lifecycle
+
