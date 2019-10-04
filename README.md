@@ -20,7 +20,7 @@ On peut ensuite l'inclure dans notre code.
 
 Source : https://developer.android.com/studio/write/vector-asset-studio.html#running ("Importing an SVD or PSD file")
 
-### Question 3 : 
+### Question 3 :
 
 Quand on presse le bouton Back, l'application n'est plus visible, donc `onStop()` est appelé. Cette méthode n'est pas implémentée dans notre application, donc quand on la rouvre, il faut se re-loguer à nouveau car l'Activity de départ est relancée.
 
@@ -45,9 +45,22 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
 Source : https://stackoverflow.com/questions/46744104/tm-getdeviceid-is-deprecated#46744134
 
-### Question 6 : TODO
+### Question 6 :
 
-### Question 7 : TODO
+On rajoute un layout specifique à l'orientation paysage via le bouton de gestion des layouts dans l'IDE:
+
+Preview -> orientation for preview (O) -> Create Landscape Variation
+
+Android studio va créer ainsi toute les composantes du nouveau layout en se basant de la version originelle en portrait, qu'on peut donc modifier afin de créer une page plus plaisante et adapté à la vision en paysage.
+
+### Question 7 :
+
+Avec l'onglet de gestion des layouts, on effectue une conversion de Linearlayout -> RelativeLayout. Enfin, afin de reyouter les notions d'ordre vertical qui maitenant son plus gerés par le layout parent, on indique via la commande
+```
+android:layout_below="@+id/XXXXXXX"
+```
+
+les differents niveaux de hierarchie des differents elements.
 
 ### Question 8 : Pas fini (faire le code)
 
@@ -71,7 +84,7 @@ Source : https://stackoverflow.com/questions/46744104/tm-getdeviceid-is-deprecat
 
 Lancement de l'Activity : on appelle dans l'ordre `onCreate()`, `onStart()` et `onResume()`. L'Activity devient en cours d'exécution.
 
-Une autre Activity vient au premier plan : `onPause()` est appelé. 
+Une autre Activity vient au premier plan : `onPause()` est appelé.
 
 Si l'utilisateur y retourne, `onResume()` est appelé, qui remet l'Activity en cours d'exécution.
 
