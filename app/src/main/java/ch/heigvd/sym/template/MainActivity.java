@@ -36,7 +36,8 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
-public class MainActivity extends Activity {
+
+public class MainActivity extends GenericActivity {
 
 	public static final String EXTRA_MAIL = "email";
 
@@ -102,7 +103,7 @@ public class MainActivity extends Activity {
 
 		// Return true if combination valid, false otherwise
 		for( HashMap.Entry<String, String> user : usersList.entrySet() ){
-			
+
 			if (mail.equals(user.getKey()) && passwd.equals(user.getValue())){
 				return true;
 			}

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-public class Activity extends AppCompatActivity {
+public class GenericActivity extends AppCompatActivity {
 
     protected static String TAG;
 
