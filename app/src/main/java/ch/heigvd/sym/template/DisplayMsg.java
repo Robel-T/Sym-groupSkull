@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -13,9 +15,10 @@ public class DisplayMsg extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_display_msg);
 
-
+        setTitle("Message");
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         String mail = intent.getStringExtra(MainActivity.EXTRA_MAIL);
@@ -25,9 +28,13 @@ public class DisplayMsg extends AppCompatActivity {
         textView.setText(mail);
 
         TelephonyManager tm = (TelephonyManager)getSystemService((TELEPHONY_SERVICE));
-        String imei = tm.getImei();
+        String imei = "IMEI - " + tm.getImei();
 
-                TextView timei = findViewById(R.id.imei);
+        TextView timei = findViewById(R.id.imei);
         timei.setText(imei);
+
+
     }
+
+
 }
