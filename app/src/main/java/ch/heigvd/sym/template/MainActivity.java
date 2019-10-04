@@ -102,8 +102,7 @@ public class MainActivity extends Activity {
 
 		// Return true if combination valid, false otherwise
 		for( HashMap.Entry<String, String> user : usersList.entrySet() ){
-
-			Log.w(TAG, "im here");
+			
 			if (mail.equals(user.getKey()) && passwd.equals(user.getValue())){
 				return true;
 			}
