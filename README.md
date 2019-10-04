@@ -20,7 +20,13 @@ On peut ensuite l'inclure dans notre code.
 
 Source : https://developer.android.com/studio/write/vector-asset-studio.html#running ("Importing an SVD or PSD file")
 
-### Question 3 : TODO
+### Question 3 : 
+
+Quand on presse le bouton Back, l'application n'est plus visible, donc `onStop()` est appelé. Cette méthode n'est pas implémentée dans notre application, donc quand on la rouvre, il faut se re-loguer à nouveau.
+
+Il faudrait que l'état du login soit sauvegardé dans un état créé dans la méthode `onStart()`.
+
+Dans notre application, nous avons tout implémenté dans des méthodes `onCreate()`. Ce n'est pas une bonne méthode du tout, il faudrait essayer d'implémenter chaque fonction définie dans la question 8 (voir ci-dessous).
 
 ### Question 4 : TODO
 
