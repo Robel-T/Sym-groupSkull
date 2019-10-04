@@ -28,7 +28,7 @@ package ch.heigvd.sym.template;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,13 +36,18 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
 	public static final String EXTRA_MAIL = "email";
 
 	// For logging purposes
-    private static final String TAG = MainActivity.class.getSimpleName();
-    
+    //private static final String TAG = MainActivity.class.getSimpleName();
+
+    static {
+		// For logging purposes
+    	TAG = MainActivity.class.getSimpleName();
+	}
+
 	private static final HashMap<String,String> usersList = Users.getUsers();
 
     // GUI elements

@@ -10,7 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class DisplayMsg extends AppCompatActivity {
+public class DisplayMsg extends Activity {
+
+    static {
+        // For logging purposes
+        TAG = DisplayMsg.class.getSimpleName();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
