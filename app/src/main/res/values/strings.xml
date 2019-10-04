@@ -9,5 +9,5 @@
     <string name="wrong">Email or Password not recognized</string>
     <string name="good">Valid login, welcome !</string>
     <string name="missAt">Not a email !</string>
-    
+
 </resources>

@@ -25,6 +25,7 @@
  */
 package ch.heigvd.sym.template;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,7 +38,10 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    // For logging purposes
+	public static final String EXTRA_MAIL = "email";
+	public static final String EXTRA_IMEI = "iemi";
+
+	// For logging purposes
     private static final String TAG = MainActivity.class.getSimpleName();
     
 	private static final HashMap<String,String> usersList = Users.getUsers();
@@ -84,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
 				 * But just display a small message before quitting...
 				 */
 				Toast.makeText(MainActivity.this, getResources().getString(R.string.good), Toast.LENGTH_LONG).show();
+
+				Intent intent = new Intent(this, DisplayMsg.class);
+				 		intent.putExtra(EXTRA_MAIL, mail);
+				 		//intent.putExtra(EXTRA_IMEI, );
+				 		this.startActivity(intent);
+
+
+
 				finish();
 			} else {
 				if(!mail.contains("@") && !mail.isEmpty()) {
