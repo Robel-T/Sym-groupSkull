@@ -41,9 +41,6 @@ public class MainActivity extends GenericActivity {
 
 	public static final String EXTRA_MAIL = "email";
 
-	// For logging purposes
-    //private static final String TAG = MainActivity.class.getSimpleName();
-
     static {
 		// For logging purposes
     	TAG = MainActivity.class.getSimpleName();
@@ -70,7 +67,6 @@ public class MainActivity extends GenericActivity {
 
 		// Then program action associated to "Ok" button
 		signIn.setOnClickListener((v) -> {
-
 
 			String mail = email.getText().toString();
 			String passwd = mdp.getText().toString();

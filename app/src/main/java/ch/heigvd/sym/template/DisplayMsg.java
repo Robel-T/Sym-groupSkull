@@ -1,3 +1,13 @@
+/*
+ * File     : DisplayMsg.java
+ * Project  : Labo01 SYM
+ * Author   : Edoardo Carpita, Marion Dutu Launay, Robel Teklehaimanot
+ * Date     : 6 octobre 2019
+ *
+ * Ce code implémente les fonctionnalités demandées suite au login correct de l'utilisateur.
+ *
+ */
+
 package ch.heigvd.sym.template;
 
 import android.content.Intent;

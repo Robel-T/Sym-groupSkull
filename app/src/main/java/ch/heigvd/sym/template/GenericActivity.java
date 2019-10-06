@@ -1,3 +1,14 @@
+/*
+ * File     : GenericActivity.java
+ * Project  : Labo01 SYM
+ * Author   : Edoardo Carpita, Marion Dutu Launay, Robel Teklehaimanot
+ * Date     : 6 octobre 2019
+ *
+ * Ce code override les fonctions principales d'une Activity. Dans notre cas, le but était
+ * de faire apparaître des logs dès que l'Activity appelait l'une de ces fonctions.
+ *
+ */
+
 package ch.heigvd.sym.template;
 
 import androidx.appcompat.app.AppCompatActivity;
