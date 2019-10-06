@@ -8,9 +8,9 @@ Date : 6 octobre 2019
 
 ### Question 1 :
 
-Pour obtenir une application multi-langues, il suffit de créer un dossier `values` pour chaque langue supportée avec leur suffixe (`values-fr`, `values-de`, `values-it` et `values-es`). Le dossier `values` est sensé contenir les valeurs de la langue par défaut (anglais dans notre cas).
+Pour obtenir une application multi-langues, il suffit de créer un dossier `values` pour chaque langue supportée avec leur suffixe (`values-fr`, `values-de`, `values-it` et `values-es`). Le dossier `values` sans suffixe est sensé contenir les valeurs de la langue par défaut (anglais dans notre cas).
 
-Si une traduction est manquante, un warning `Missing Translation` à la compilation est lancé.
+Si une traduction est manquante, un warning à la compilation `Missing Translation` est lancé.
 
 ### Question 2 :
 
